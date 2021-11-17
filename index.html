@@ -104,6 +104,7 @@
         this.name = "EmptyBtnError";
       }
     }
+    let count =0;
     let form = document.querySelector('form');
     form.addEventListener('submit', e => {
       e.preventDefault();
@@ -199,12 +200,15 @@
 
     // Start Timer
     errorBtns[11].addEventListener("click", function(){
-      console.time("AH");
+      
+      console.time(count);
+      count++;
     });
 
     // End Timer
     errorBtns[12].addEventListener("click", function(){
-      console.timeEnd("AH");
+      console.timeEnd(count);
+      count--;
     });
 
     // console Trace
