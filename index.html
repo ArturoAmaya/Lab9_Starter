@@ -221,7 +221,7 @@
 
     // Try catch time
     errorBtns[15].addEventListener("click", function(){
-      console.log("Pt1: Generate a random number and then try access the arrays");
+      console.log("Pt1: Generate a random number 0-25 and then try to access the arrays. \n Sometimes it'll work and sometimes it won't :), simulating unexpected behavior");
       let numb = Math.ceil(Math.random() * 25);
       console.log(numb);
       console.time('try');
@@ -231,20 +231,23 @@
         console.warn(err.name + " CAUGHT! be careful!");
       }
 
-      console.log("Pt2: delete a button's name and then try to access it!");
+      console.log("Pt2: delete a button's name and then try to access it! (Pretend as though they're two different modules)");
       numb = Math.floor(Math.random()*errorBtns.length);
       console.log (numb);
       errorBtns[numb].innerHTML = "";
       try {
         
         const name = errorBtns[numb].innerHTML;
+        // custom error
         if(!name){
           throw new EmptyBtnError("OFC it's empty");
         }
         
       } catch (err){
         if (err instanceof EmptyBtnError){
-          console.warn("well well well it's an empty button error " + err.message);
+          console.warn("well well well we've caught an empty button error " + err.message);
+        } else {
+          throw(err);
         }
       } finally {
         console.timeEnd('try');
