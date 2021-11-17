@@ -102,21 +102,50 @@
 
     // Start your code here
     // You may move this JS to another file if you wish
+    // Log
     errorBtns[0].addEventListener("click", function(){
       console.log("Hello World!");
     });
 
+    // Error
     errorBtns[1].addEventListener("click", function(){
       console.error("I'm sorry Dave. I'm afraid I can't do that. >:)");
       // I really liked the API's example error, it's a classic
       console.error("uhoh, stinky");
     });
 
+    // Count
     errorBtns[2].addEventListener("click", function(){
       console.count('ahhh! I have been pressed this many times');
     });
 
-    
+    // Warn
+    errorBtns[3].addEventListener("click", function(){
+      console.warn("WELCOME TO THE NOT THAT DANGER-OUS ZONE");
+    });
+
+    // Assert
+    errorBtns[4].addEventListener("click", function(){
+      const a = 4;
+      const b = 7;
+      const reasoning = `${b} + ${b} + ${b} + ${b} = 28`;
+      console.assert (4*7==26, {a,b,reasoning});
+    });
+
+    // Clear
+    errorBtns[5].addEventListener("click", function(){
+      console.clear();
+    });
+
+    // Dir
+    errorBtns[6].addEventListener("click", function(){
+      console.dir(document.childNodes);
+    });
+
+    // Dirxml
+    errorBtns[7].addEventListener("click", function(){
+      console.dirxml(document);
+    });
   </script>
 </body>
 
