@@ -251,7 +251,7 @@
         
       } catch (err){
         if (err instanceof EmptyBtnError){
-          console.warn("well well well we've caught an empty button error " + err.message);
+          console.warn("well well well we've caught an empty button error: " +err.name +" " + err.message);
         } else {
           throw(err);
         }
